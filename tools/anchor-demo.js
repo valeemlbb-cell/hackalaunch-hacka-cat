@@ -19,7 +19,7 @@ const fills = [
 
 let prev = 'genesis';
 const chain = [];
-process.stdout.write('the memo each decision writes to devnet\n');
+process.stdout.write('the memo each decision WOULD write to devnet - offline preview, no key needed\n');
 process.stdout.write(`${'-'.repeat(74)}\n`);
 
 for (const [kind, fill, extra] of fills) {

@@ -19,7 +19,9 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Video build artefacts. demo.mp4 itself (6 MB) IS committed.
+# Video build artefacts. demo.mp4 (the one canonical cut) IS committed, and so
+# are the narration clips in demo/audio/, so a clone can re-render the exact
+# video without a TTS service. demo_raw.mp4 is the pre-compression intermediate.
 demo/frames/
-demo/audio/
 demo/check/
+demo_raw.mp4

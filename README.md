@@ -7,8 +7,14 @@
    > ^ <    every decision is anchored on-chain, hash-chained, verifiable
 ```
 
+[![test](https://github.com/valeemlbb-cell/hackalaunch-hacka-cat/actions/workflows/test.yml/badge.svg)](https://github.com/valeemlbb-cell/hackalaunch-hacka-cat/actions/workflows/test.yml)
+[![licence: MIT](https://img.shields.io/badge/licence-MIT-green.svg)](LICENSE)
+
 Submission for the **Hacka Cat ($HCAT)** hackathon on HackaLaunch.
 Brief: *"build a cat agent that trades all the cat runners."*
+
+**Watch the demo:** `<VIDEO_URL>` — 2 min 18 s. (Public link, posted by a human
+before submission; the same file ships in this repo as [`demo.mp4`](demo.mp4).)
 
 ---
 
@@ -46,19 +52,30 @@ local file the operator could have rewritten after the fact.
 
 ## Demo video
 
-[`demo.mp4`](demo.mp4) — 2 min 46 s, 1080p, in this repository.
+[`demo.mp4`](demo.mp4) — 2 min 18 s, 1080p, in this repository. This is the
+one canonical cut: under the hackathon's 3-minute limit and under X's 140 s
+non-premium limit, so the same file is the public link and the X post.
 
 Every line of terminal output in that video is real captured stdout from the
-commands shown on screen (`demo/cap/*.txt`), rendered frame by frame by
-[`tools/make_demo.py`](tools/make_demo.py). Nothing was typed by hand or faked
-for the camera; regenerate the whole video with `python tools/make_demo.py`.
+commands shown on screen (`demo/cap/*.txt`). It is **re-rendered frame by
+frame** by [`tools/make_demo.py`](tools/make_demo.py) rather than screen-
+recorded, so the text stays legible at video resolution — the video says so on
+its opening card. Nothing was typed by hand or invented for the camera;
+regenerate the whole thing with `python tools/make_demo.py` (then the 1.2×
+time-compress in `tools/make_demo_x.sh`, which produces the committed cut) and
+compare.
+
+The narration is text-to-speech (`edge-tts`, falling back to the offline
+Windows speech engine via `tools/say.ps1`). The frames use DejaVu Sans Mono;
+emoji cells fall back to the system emoji font (`seguiemj.ttf` on Windows) at
+render time — neither font is bundled in this repository.
 
 ---
 
 ## Quickstart
 
 ```bash
-git clone <this repo> && cd catnip-agent
+git clone https://github.com/valeemlbb-cell/hackalaunch-hacka-cat && cd hackalaunch-hacka-cat
 npm install          # one dependency: @solana/web3.js
 npm test             # 83 tests, no network, no keys
 npm run demo         # the agent trading the deterministic tape
@@ -201,9 +218,12 @@ is *not* yet demonstrated is a confirmed devnet transaction from this machine:
 the public devnet faucet rate-limited every airdrop attempt while this was
 built, so the wallet has 0 SOL and no signature to link. `catnip anchor-selftest`
 is the one command that closes that gap the moment a wallet has test SOL — it
-anchors a buy and a sell and reads them back off the chain. Until then, run
+anchors a buy and a sell and reads them back off the chain, and prints the two
+explorer links that belong in this section (RUN.md step 3; <https://faucet.solana.com>
+works from a browser when the CLI faucet does not). Until then, run
 `node tools/anchor-demo.js` to see the exact memo bytes and watch the chain
-reject a tampered record, offline and with no key.
+reject a tampered record, offline and with no key — and note that the demo
+video labels that scene as an offline preview on screen, for the same reason.
 
 ---
 
@@ -248,6 +268,10 @@ test/                     83 tests
 npm test
 ```
 
+Also run on every push by [`.github/workflows/test.yml`](.github/workflows/test.yml)
+(`npm ci && npm test && npm run backtest`), so the badge above is a judge's
+one-click proof without cloning anything.
+
 83 tests, all offline and deterministic: detector (including the live-data
 false positives found while building — `SCATE` has its own regression test),
 runner scoring and every exit path, all risk guards, portfolio accounting
@@ -264,7 +288,10 @@ never spends cash it does not have, and never buys a trap, a dog or a honeypot.
 this hackathon between 24 Sep 2026 and submission. The only third-party
 dependency is `@solana/web3.js` (Apache-2.0). No code, asset or fixture was
 carried over from an earlier project. The ASCII cat is original; there are no
-bundled fonts or images.
+bundled fonts or images. The demo renderer uses fonts already installed on the
+build machine (DejaVu Sans Mono, and the system emoji font as a per-cell
+fallback) and `edge-tts` / the Windows speech engine for narration; none of
+them are redistributed here.
 
 **AI agent usage:** this repository was written by Claude (Anthropic) operating
 as a coding agent under the direction of Warung Ops, who specified the design,

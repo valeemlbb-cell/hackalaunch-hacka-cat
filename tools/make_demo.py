@@ -6,7 +6,8 @@ command shown above it (captured into demo/cap/*.txt). The script draws a
 terminal, types the captured bytes, and muxes an edge-tts narration.
 
 Usage:  python tools/make_demo.py            (expects demo/cap/*.txt present)
-Output: demo.mp4 (1920x1080, 30 fps, H.264 + AAC)
+Output: demo_raw.mp4 (1920x1080, 30 fps, H.264 + AAC)
+        then: sh tools/make_demo_x.sh   ->  demo.mp4 (the canonical 1.2x cut)
 """
 from __future__ import annotations
 
@@ -23,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CAP = ROOT / "demo" / "cap"
 FRAMES = ROOT / "demo" / "frames"
 AUDIO = ROOT / "demo" / "audio"
-OUT = ROOT / "demo.mp4"
+OUT = ROOT / "demo_raw.mp4"  # time-compressed into demo.mp4 by tools/make_demo_x.sh
 
 W, H, FPS = 1920, 1080, 30
 BG = (13, 17, 23)
@@ -150,10 +151,14 @@ SCENES = [
         "lines": [
             "Hacka Cat ($HCAT)  -  HackaLaunch",
             "Solana devnet / paper only. Never mainnet funds.",
+            "",
+            "Every terminal line below is real captured stdout, re-rendered for",
+            "legibility - regenerate it with  python tools/make_demo.py",
         ],
         "vo": "This is CATNIP, an autonomous Solana agent built for the Hacka Cat "
               "hackathon. The brief: build a cat agent that trades all the cat runners. "
-              "Everything you are about to see is real output from real commands.",
+              "Everything you are about to see is real captured output from real "
+              "commands, re-rendered here so it is readable at video resolution.",
         "hold": 0.6,
     },
     {
@@ -216,8 +221,10 @@ SCENES = [
         "cmd": "node tools/anchor-demo.js",
         "body": "anchor.txt",
         "vo": "Last piece. A trading agent you cannot audit is just a screenshot. "
-              "So every decision CATNIP makes is written to Solana devnet as a memo "
+              "So every decision CATNIP makes is anchored to Solana devnet as a memo "
               "transaction, hash chained to the one before it. "
+              "This preview runs offline, with no key and no devnet SOL, so it shows "
+              "the exact bytes the agent would send. "
               "Here is the exact memo. And here is what happens when an operator quietly "
               "edits a losing trade to look like a win: the hash no longer matches the "
               "record on chain, and verification breaks. The log is public chain state. "
