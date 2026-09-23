@@ -1,0 +1,17 @@
+the memo each decision writes to devnet
+--------------------------------------------------------------------------
+CATNIP1:genesis:a74a0f6159e721ef659cfd6a31d27f39:{"v":1,"k":"buy","m":"CatN1pRunner1111111111111111111111111111111","s":"MEOWFI","p":0.00008038,"q":1119682,"u":90,"f":0.29,"t":1790219640000,"c":1,"r":0.61}
+  (205 bytes)
+
+CATNIP1:a74a0f6159e721ef659cfd6a31d27f39:436a791b3dea5add6d23a3ac53ffc661:{"v":1,"k":"sell","m":"CatN1pRunner1111111111111111111111111111111","s":"MEOWFI","p":0.0001233,"q":1119682,"u":138.05,"f":0.43,"t":1790222040000,"why":"take profit 54.6%"}
+  (245 bytes)
+
+--------------------------------------------------------------------------
+verifying the chain
+  link 0  OK
+  link 1  OK
+
+now an operator quietly edits the losing trade to look like a win
+  link 1  BROKEN - hash does not match the on-chain record
+
+the chain is public. the log cannot be rewritten after the fact.

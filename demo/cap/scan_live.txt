@@ -1,0 +1,22 @@
+source: dexscreener
+
+SYMBOL      CAT    RUN    LIQ$       5m%      VERDICT
+------------------------------------------------------------------------------
+POPCAT      1.00   0.17   4,118,529  -0.2     cat, not running (established market — age penalty waived)
+MEW         1.00   0.15   9,936,458  0.6      cat, not running (established market — age penalty waived)
+PURR        0.69   0.13   537,181    0.0      cat, not running (established market — age penalty waived)
+GATO        1.00   0.08   131,405    -2.1     cat, not running (stale (703.4h))
+KITTY       1.00   0.06   131,515    0.0      BLOCKED: 24h volume $1883 < $15000
+meowl       1.00   0.05   75,832     0.0      BLOCKED: 24h volume $7510 < $15000
+KITTY       1.00   0.04   350,776    -0.1     cat, not running (established market — age penalty waived)
+SOLCAT      1.00   0.04   28,147     0.0      BLOCKED: 24h volume $9278 < $15000
+SOLCAT      1.00   0.03   17,807     0.0      BLOCKED: 24h volume $648 < $15000
+RKC         0.44   0.06   254,191    -1.2     not a cat (cat signal: kitten -> 0.44)
+SOLCAT      1.00   0.02   12,544     0.0      BLOCKED: 24h volume $379 < $15000
+$SNEKO      0.44   0.04   44,388     0.0      not a cat (cat signal: neko -> 0.44)
+SOLCAT      1.00   0.02   7,476      0.0      BLOCKED: liquidity $7476 < $8000
+SOLCAT      1.00   0.01   5,850      0.0      BLOCKED: liquidity $5850 < $8000
+SOLCAT      1.00   0.01   20,738     -1.6     cat, not running (stale (144.6h))
+SOLCAT      1.00   0.01   3,845      0.0      BLOCKED: liquidity $3845 < $8000
+HIMA        0.44   0.02   9,110      0.0      not a cat (cat signal: cat -> 0.44)
+Advocat     0.44   0.01   5,838      0.0      not a cat (cat signal: cat -> 0.44)

@@ -1,0 +1,25 @@
+node_modules/
+logs/
+*.log
+
+# Secrets — never commit any of these.
+.env
+.env.*
+!.env.example
+*.keypair.json
+*-keypair.json
+id.json
+catnip-devnet.json
+wallet*.json
+**/secrets/
+
+# Build / OS noise
+dist/
+coverage/
+.DS_Store
+Thumbs.db
+
+# Video build artefacts. demo.mp4 itself (6 MB) IS committed.
+demo/frames/
+demo/audio/
+demo/check/
