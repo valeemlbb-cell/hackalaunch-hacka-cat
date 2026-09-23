@@ -1,0 +1,23 @@
+{
+  "name": "catnip-agent",
+  "version": "1.0.0",
+  "description": "CATNIP - an autonomous Solana agent that finds cat-themed runners, scores them, and trades them. Paper by default, devnet-anchored audit trail.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "catnip": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "scan": "node src/index.js scan",
+    "backtest": "node src/index.js backtest",
+    "doctor": "node src/index.js doctor",
+    "demo": "node src/index.js run --source fixture --mode paper --ticks 12 --speed 0"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.99.0"
+  }
+}

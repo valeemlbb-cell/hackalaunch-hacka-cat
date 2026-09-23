@@ -1,0 +1,36 @@
+
+   /\_/\   CATNIP
+  ( o.o )  an agent that trades all the cat runners
+   > ^ <   devnet / paper only - never mainnet funds
+
+BACKTEST  48 frames x 300s
+----------------------------------------------------
+startingCashUsd       1000.00
+cashUsd               1197.80
+equityUsd             1197.80
+returnPct             19.78
+realisedPnlUsd        197.80
+feesUsd               4.41
+openPositions         0.00
+closedTrades          7.00
+wins                  6.00
+losses                1.00
+winRatePct            85.70
+peakEquityUsd         1199.56
+maxDrawdownPct        -2.72
+
+trades:
+  BUY  NEKO       @ 1.732e-3
+  SELL NEKO       @ 2.564e-3  pnl +39.83  (take profit 49.3%)
+  BUY  MEOWFI     @ 8.038e-5
+  BUY  P0PC4T     @ 4.073e-4
+  BUY  🐱COIN     @ 6.849e-6
+  BUY  NEKO       @ 3.823e-3
+  SELL MEOWFI     @ 1.233e-4  pnl +45.20  (take profit 54.6%)
+  SELL P0PC4T     @ 6.199e-4  pnl +43.56  (take profit 53.6%)
+  SELL 🐱COIN     @ 1.003e-5  pnl +37.50  (take profit 47.9%)
+  SELL NEKO       @ 3.002e-3  pnl -19.49  (stop loss -20.8%)
+  BUY  CATNIP     @ 3.163e-3
+  BUY  GATO       @ 1.963e-5
+  SELL CATNIP     @ 4.363e-3  pnl +28.54  (liquidate)
+  SELL GATO       @ 2.501e-5  pnl +22.65  (liquidate)

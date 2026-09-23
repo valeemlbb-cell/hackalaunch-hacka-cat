@@ -1,0 +1,17 @@
+✔ a full backtest is profitable on the reference tape and is deterministic (98.606ms)
+✔ the agent never buys a trap, a dog or a honeypot (27.9676ms)
+✔ the position cap is respected for the whole run (24.8598ms)
+✔ the agent never spends cash it does not have (24.9566ms)
+✔ every buy carries the evidence that produced it (19.5366ms)
+✔ obvious cats score above threshold (1.3499ms)
+✔ container traps are NOT cats (2.3756ms)
+✔ a stray letter in front does not make a cat (SCATE regression) (0.7628ms)
+✔ dog-dominant tokens lose their cat score (0.4109ms)
+ℹ tests 83
+ℹ suites 0
+ℹ pass 83
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 338.4412
