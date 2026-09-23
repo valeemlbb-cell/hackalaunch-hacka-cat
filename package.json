@@ -11,6 +11,7 @@
     "node": ">=20.11.0"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "node --test test/*.test.js",
     "scan": "node src/index.js scan",
     "backtest": "node src/index.js backtest",
@@ -18,8 +19,19 @@
     "demo": "node src/index.js run --source fixture --mode paper --speed 0",
     "tape": "node tools/make-tape.js",
     "anchor-demo": "node tools/anchor-demo.js"
+=======
+    "test": "node --test test/",
+    "scan": "node src/index.js scan",
+    "backtest": "node src/index.js backtest",
+    "doctor": "node src/index.js doctor",
+    "demo": "node src/index.js run --source fixture --mode paper --ticks 12 --speed 0"
+>>>>>>> 89b45e00d5537110d26452ac585f96175a2d9125
   },
   "dependencies": {
     "@solana/web3.js": "^1.99.0"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 89b45e00d5537110d26452ac585f96175a2d9125
